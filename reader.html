@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reader — Tarbiyat</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b1830">
+<style>
+  :root{--bg:#0b1830;--ink:#eaf0ff;--muted:#9fb2d8;--gold:#d9a441;--line:#26406f;--card:#122a55}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,24,48,.92);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .bar{max-width:1180px;margin:0 auto;padding:12px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .bar a.home{color:var(--gold);text-decoration:none;font-weight:bold;font-family:Georgia,serif;font-size:18px}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+  .filters button{background:transparent;color:var(--muted);border:1px solid var(--line);
+    border-radius:20px;padding:6px 13px;font-size:12px;cursor:pointer;letter-spacing:.5px}
+  .filters button.active{background:var(--gold);color:#231600;border-color:var(--gold);font-weight:bold}
+  main{max-width:1180px;margin:0 auto;padding:22px 18px 80px}
+  .item{margin:0 0 40px;scroll-margin-top:76px}
+  .meta{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin:0 0 10px}
+  .meta .n{color:var(--gold);font-family:Georgia,serif;font-size:20px}
+  .meta h2{font-family:Georgia,serif;font-size:22px;margin:0;font-weight:normal}
+  .meta .sec{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);
+    border:1px solid var(--line);border-radius:20px;padding:3px 10px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 10px}
+  .topics{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+  .topics span{font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+  .frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#04101f}
+  .frame img{width:100%;display:block}
+  .row{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+  .row a{font-size:13px;color:var(--gold);text-decoration:none;border:1px solid var(--line);
+    border-radius:8px;padding:7px 12px}
+  .row a:hover{border-color:var(--gold)}
+  .empty{color:var(--muted);padding:40px 0;text-align:center}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="home" href="index.html">← Tarbiyat</a>
+  <div class="filters" id="filters"></div>
+</div></header>
+<main id="main"><p class="empty">Loading…</p></main>
+<script>
+let INDEX=null, active='All';
+function render(){
+  const main=document.getElementById('main'); main.innerHTML='';
+  const list=INDEX.posters.filter(p=>active==='All'||p.section===active);
+  if(!list.length){main.innerHTML='<p class="empty">Nothing here.</p>';return;}
+  list.forEach(p=>{
+    const seed='seed.html#'+p.slug;
+    const el=document.createElement('article');el.className='item';el.id=p.slug;
+    el.innerHTML=`
+      <div class="meta"><span class="n">${String(p.n).padStart(2,'0')}</span>
+        <h2>${p.title}</h2><span class="sec">${p.section}</span></div>
+      <p class="sub">${p.subtitle||''}</p>
+      <div class="topics">${(p.topics||[]).map(t=>`<span>${t}</span>`).join('')}</div>
+      <div class="frame"><img loading="lazy" src="${p.image}" alt="${p.title}"></div>
+      <div class="row">
+        <a href="${p.image}" target="_blank" rel="noopener">Open full image ↗</a>
+        <a href="${seed}">Seed a conversation on this →</a>
+      </div>`;
+    main.appendChild(el);
+  });
+  if(location.hash){const t=document.getElementById(location.hash.slice(1));if(t)t.scrollIntoView();}
+}
+function buildFilters(){
+  const f=document.getElementById('filters');
+  ['All',...INDEX.sections].forEach(s=>{
+    const b=document.createElement('button');b.textContent=s;
+    if(s===active)b.classList.add('active');
+    b.onclick=()=>{active=s;[...f.children].forEach(c=>c.classList.remove('active'));
+      b.classList.add('active');render();};
+    f.appendChild(b);
+  });
+}
+fetch('assets/metadata/tarbiyat-index.json').then(r=>r.json()).then(idx=>{
+  INDEX=idx;buildFilters();render();
+});
+</script>
+<script>if("serviceWorker"in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

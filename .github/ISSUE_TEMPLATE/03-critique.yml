@@ -1,0 +1,21 @@
+name: "⚖️ Critique / stress-test"
+description: Rigorously interrogate a claim, find a missing piece, or surface a contradiction.
+title: "[critique] "
+labels: ["critique", "needs:proof"]
+body:
+  - type: input
+    id: poster
+    attributes: {label: Poster / claim under critique}
+    validations: {required: true}
+  - type: textarea
+    id: claim
+    attributes: {label: The specific claim, description: Quote or paraphrase the exact claim.}
+    validations: {required: true}
+  - type: textarea
+    id: objection
+    attributes:
+      label: The objection
+      description: Edge case, missing assumption, or evidence against. Evidence, not tone.
+    validations: {required: true}
+  - type: markdown
+    attributes: {value: "> This contribution is governed by the repository CONTRACT and CONTEXT. By opening it you agree to reconstruct faithfully, critique with evidence not tone, and maintain contract and context. Affiliation on all outputs: AyeAI."}

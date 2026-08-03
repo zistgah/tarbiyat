@@ -1,0 +1,11 @@
+name: "🐞 Site / build issue"
+description: Something in the landing page, reader, seeder, or PWA is broken.
+title: "[bug] "
+labels: ["bug", "needs:code"]
+body:
+  - type: textarea
+    id: what
+    attributes: {label: What happened, description: Steps, page, and what you expected.}
+    validations: {required: true}
+  - type: markdown
+    attributes: {value: "> This contribution is governed by the repository CONTRACT and CONTEXT. By opening it you agree to reconstruct faithfully, critique with evidence not tone, and maintain contract and context. Affiliation on all outputs: AyeAI."}

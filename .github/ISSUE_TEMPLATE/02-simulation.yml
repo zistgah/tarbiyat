@@ -1,0 +1,21 @@
+name: "🔬 Simulation / model"
+description: Propose or contribute a runnable simulation illustrating a Tarbiyat concept.
+title: "[simulation] "
+labels: ["simulation", "needs:code"]
+body:
+  - type: input
+    id: poster
+    attributes: {label: Related poster}
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: What it demonstrates
+      description: The concept, the observable it produces, and how success is judged.
+    validations: {required: true}
+  - type: textarea
+    id: approach
+    attributes: {label: Approach / stack, description: Language, libraries, inputs, outputs.}
+    validations: {required: true}
+  - type: markdown
+    attributes: {value: "> This contribution is governed by the repository CONTRACT and CONTEXT. By opening it you agree to reconstruct faithfully, critique with evidence not tone, and maintain contract and context. Affiliation on all outputs: AyeAI."}

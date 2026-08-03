@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seed a conversation — Tarbiyat</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b1830">
+<style>
+  :root{--bg:#0b1830;--ink:#eaf0ff;--muted:#9fb2d8;--gold:#d9a441;--line:#26406f;--card:#122a55}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{border-bottom:1px solid var(--line);padding:16px 0}
+  header a{color:var(--gold);text-decoration:none;font-family:Georgia,serif;font-size:18px;font-weight:bold}
+  h1{font-family:Georgia,serif;font-size:30px;margin:26px 0 4px}
+  .sub{color:var(--muted);margin:0 0 26px}
+  label{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);margin:18px 0 8px}
+  select,textarea{width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);
+    border-radius:8px;padding:12px;font-size:15px;font-family:inherit}
+  textarea{min-height:220px;line-height:1.5;resize:vertical}
+  .roles{display:flex;gap:8px;flex-wrap:wrap}
+  .roles button{background:transparent;color:var(--muted);border:1px solid var(--line);
+    border-radius:20px;padding:8px 15px;font-size:13px;cursor:pointer}
+  .roles button.active{background:var(--gold);color:#231600;border-color:var(--gold);font-weight:bold}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 60px}
+  .actions button,.actions a{padding:12px 20px;border-radius:8px;font-size:15px;cursor:pointer;
+    text-decoration:none;border:1px solid var(--line);background:transparent;color:var(--ink)}
+  .actions .primary{background:var(--gold);color:#231600;border-color:var(--gold);font-weight:bold}
+  .note{color:var(--muted);font-size:13px}
+  .ok{color:#7ad48c}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="index.html">← Tarbiyat</a></div></header>
+<div class="wrap">
+  <h1>Seed a conversation</h1>
+  <p class="sub">Pick a poster and a role. This composes a prompt entirely in your browser —
+    no data leaves this page. Copy it into any AI, or use the open-Claude fallback.</p>
+
+  <label>Poster</label>
+  <select id="poster"></select>
+
+  <label>Your role</label>
+  <div class="roles" id="roles"></div>
+
+  <label>Composed prompt</label>
+  <textarea id="prompt" spellcheck="false"></textarea>
+
+  <div class="actions">
+    <button class="primary" id="copy">Copy prompt</button>
+    <a class="primary" id="open" href="#" target="_blank" rel="noopener">Open in Claude ↗</a>
+    <span class="note" id="status"></span>
+  </div>
+  <p class="note">Every seeded contribution should carry the repository's CONTRACT and CONTEXT.
+    See the issue templates in the repo to propose a chapter, a simulation, or a critique.</p>
+</div>
+<script>
+const ROLES={
+  explore:{label:"Explore",
+    lead:"I want to explore and understand the ideas in this poster in depth."},
+  apply:{label:"Apply",
+    lead:"I want to apply the framework in this poster to a concrete situation."},
+  critique:{label:"Critique",
+    lead:"I want to rigorously critique and stress-test the claims in this poster."},
+  teach:{label:"Teach",
+    lead:"I want to turn this poster into teaching material for learners."},
+};
+let INDEX=null, role='explore';
+function compose(){
+  const sel=document.getElementById('poster');
+  const p=INDEX.posters.find(x=>x.slug===sel.value)||INDEX.posters[0];
+  const r=ROLES[role];
+  const t=`${r.lead}
+
+Poster: "${p.title}" — ${p.subtitle||''}
+Collection: Tarbiyat (Topological Bildung), part of the Zistgah ecosystem.
+Themes: ${(p.topics||[]).join(', ')}.
+
+Please engage as a rigorous, first-principles interlocutor. Where you make a claim,
+ground it; where the poster asserts something, help me interrogate the assumptions,
+find the missing pieces, and connect it across disciplines and scales.`;
+  document.getElementById('prompt').value=t;
+  document.getElementById('open').href='https://claude.ai/new?q='+encodeURIComponent(t);
+}
+function buildRoles(){
+  const box=document.getElementById('roles');
+  Object.entries(ROLES).forEach(([k,v])=>{
+    const b=document.createElement('button');b.textContent=v.label;
+    if(k===role)b.classList.add('active');
+    b.onclick=()=>{role=k;[...box.children].forEach(c=>c.classList.remove('active'));
+      b.classList.add('active');compose();};
+    box.appendChild(b);
+  });
+}
+document.getElementById('copy').onclick=async()=>{
+  const txt=document.getElementById('prompt').value;
+  const s=document.getElementById('status');
+  try{await navigator.clipboard.writeText(txt);s.textContent='Copied ✓';s.className='note ok';}
+  catch(e){document.getElementById('prompt').select();s.textContent='Press Ctrl/Cmd-C to copy';}
+  setTimeout(()=>{s.textContent='';},2500);
+};
+fetch('assets/metadata/tarbiyat-index.json').then(r=>r.json()).then(idx=>{
+  INDEX=idx;
+  const sel=document.getElementById('poster');
+  idx.posters.forEach(p=>{const o=document.createElement('option');o.value=p.slug;
+    o.textContent=`${String(p.n).padStart(2,'0')} · ${p.title}`;sel.appendChild(o);});
+  const h=location.hash.slice(1);
+  if(h&&idx.posters.some(p=>p.slug===h))sel.value=h;
+  sel.onchange=compose;buildRoles();compose();
+});
+</script>
+<script>if("serviceWorker"in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

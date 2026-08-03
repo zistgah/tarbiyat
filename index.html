@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tarbiyat — Topological Bildung</title>
+<meta name="description" content="A first-principles metatheory of human capability, education, and development. 22 high-density posters.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b1830">
+<style>
+  :root{
+    --bg:#0b1830; --bg2:#0f2247; --ink:#eaf0ff; --muted:#9fb2d8;
+    --gold:#d9a441; --line:#26406f; --card:#122a55;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Georgia,"Times New Roman",serif;background:
+    radial-gradient(1200px 600px at 80% -10%, #16305e 0%, transparent 60%),
+    var(--bg);color:var(--ink);line-height:1.55}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center}
+  @media(max-width:760px){.hero-grid{grid-template-columns:1fr}.cover{order:-1;margin:0 auto}}
+  h1{font-size:44px;line-height:1.05;margin:0 0 8px;letter-spacing:.5px}
+  .kicker{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:13px;
+    font-family:Arial,Helvetica,sans-serif;margin:0 0 18px}
+  .lede{font-size:19px;color:var(--muted);max-width:52ch}
+  .cover{width:300px;max-width:100%;border-radius:6px;box-shadow:0 18px 50px rgba(0,0,0,.55);
+    border:1px solid var(--line)}
+  .cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;font-family:Arial,Helvetica,sans-serif}
+  .btn{display:inline-block;padding:12px 22px;border-radius:8px;font-size:15px;letter-spacing:.4px}
+  .btn.primary{background:var(--gold);color:#231600;font-weight:bold}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn:hover{text-decoration:none;filter:brightness(1.06)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:26px;margin:0 0 6px}
+  .sub{color:var(--muted);font-family:Arial,Helvetica,sans-serif;font-size:14px;margin:0 0 24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .15s ease,border-color .15s ease}
+  .card:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .card img{width:100%;aspect-ratio:1/1.45;object-fit:cover;object-position:top;background:#04101f}
+  .card .body{padding:12px 14px}
+  .card .sec{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1.5px;
+    text-transform:uppercase;color:var(--gold)}
+  .card .ttl{font-size:15px;margin:4px 0 0;line-height:1.25}
+  .pills{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 26px;font-family:Arial,Helvetica,sans-serif}
+  .pill{font-size:12px;padding:6px 12px;border:1px solid var(--line);border-radius:20px;color:var(--muted)}
+  footer{padding:34px 0 60px;color:var(--muted);font-family:Arial,Helvetica,sans-serif;font-size:13px}
+  .mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap hero-grid">
+  <div>
+    <p class="kicker">Zistgah · تربیت</p>
+    <h1>Tarbiyat</h1>
+    <p class="lede"><em>Topological Bildung</em> — a first-principles metatheory of human
+      capability, education, and development. Twenty-two high-density posters tracing one
+      continuous thread from embodied play to architectural mastery.</p>
+    <div class="cta">
+      <a class="btn primary" href="reader.html">Open the poster reader →</a>
+      <a class="btn ghost" href="seed.html">Seed an AI conversation</a>
+    </div>
+  </div>
+  <img class="cover" src="assets/posters/22-learning-the-geometry-cover.png" alt="Learning the Geometry — book cover">
+</div></header>
+
+<section><div class="wrap">
+  <h2>What this is</h2>
+  <p class="sub">Not pop-psychology. Not credentials. A map for building resilient, multi-scale systems thinkers.</p>
+  <div class="pills" id="sectionPills"></div>
+  <p style="max-width:70ch;color:var(--muted)">
+    The collection develops education as the progressive calibration of an individual's internal
+    state-space to match the multi-scale reality of the physical and informational world —
+    spanning a lifelong pipeline, stream guidance without gatekeeping, universal generics of rigor
+    and endurance, a somatic anchor of athletics and meditation, and strict clinical boundaries
+    that separate deep focus from pathology.
+  </p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>The posters</h2>
+  <p class="sub">Tap any poster to open it full-size in the reader.</p>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<footer><div class="wrap">
+  <p>Part of the Zistgah ecosystem. Companion to <em>The Geometry of Becoming</em> (zistgah/tabdili).</p>
+  <p class="mono">© 1982–2026 Abhishek Choudhary · AyeAI · CC BY-SA 4.0 · ORCID 0009-0002-0684-8320</p>
+</div></footer>
+
+<script>
+fetch('assets/metadata/tarbiyat-index.json').then(r=>r.json()).then(idx=>{
+  const pills=document.getElementById('sectionPills');
+  idx.sections.forEach(s=>{const e=document.createElement('span');e.className='pill';e.textContent=s;pills.appendChild(e);});
+  const grid=document.getElementById('grid');
+  idx.posters.forEach(p=>{
+    const a=document.createElement('a');a.className='card';a.href='reader.html#'+p.slug;
+    a.innerHTML=`<img loading="lazy" src="${p.image}" alt="${p.title}">
+      <div class="body"><div class="sec">${p.section}</div><div class="ttl">${p.title}</div></div>`;
+    grid.appendChild(a);
+  });
+});
+</script>
+<script>if("serviceWorker"in navigator){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

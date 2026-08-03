@@ -1,0 +1,346 @@
+{
+  "collection": "tarbiyat",
+  "title": "Tarbiyat — Topological Bildung",
+  "subtitle": "A first-principles metatheory of human capability, education, and development",
+  "count": 22,
+  "sections": [
+    "Meta-Analysis",
+    "Framework",
+    "Cognition",
+    "Discipline",
+    "Education",
+    "Guardrails",
+    "Pipeline",
+    "Synthesis",
+    "Book"
+  ],
+  "posters": [
+    {
+      "n": 1,
+      "slug": "meta-analysis-conversation",
+      "title": "Meta-Analysis of the Conversation",
+      "subtitle": "How coherence, depth, and convergence were achieved",
+      "section": "Meta-Analysis",
+      "topics": [
+        "18 prompts",
+        "chain of thought",
+        "failure modes",
+        "drift",
+        "flatness",
+        "contradiction"
+      ],
+      "image": "assets/posters/01-meta-analysis-conversation.png"
+    },
+    {
+      "n": 2,
+      "slug": "meta-analysis-conversational-synthesis",
+      "title": "Meta-Analysis of a Conversational Synthesis",
+      "subtitle": "The Geometry of Becoming: how a unified framework emerged through iterative clarification",
+      "section": "Meta-Analysis",
+      "topics": [
+        "path dependency",
+        "user as editor",
+        "dependency graph",
+        "prompt chronology",
+        "co-creation"
+      ],
+      "image": "assets/posters/02-meta-analysis-conversational-synthesis.png"
+    },
+    {
+      "n": 3,
+      "slug": "geometry-of-becoming",
+      "title": "The Geometry of Becoming",
+      "subtitle": "Motion, Information, and Thermodynamics Across Scales",
+      "section": "Framework",
+      "topics": [
+        "motion",
+        "information",
+        "thermodynamics",
+        "life & agency",
+        "cosmos",
+        "unified framework"
+      ],
+      "image": "assets/posters/03-geometry-of-becoming.png"
+    },
+    {
+      "n": 4,
+      "slug": "background-and-experience",
+      "title": "How Your Background and Experience Shaped the Conversation and the Framework",
+      "subtitle": "From practical engineering to a unified geometry of motion, information, and life",
+      "section": "Framework",
+      "topics": [
+        "robotics",
+        "drones",
+        "AI tutoring",
+        "systems engineering",
+        "conversation trajectory"
+      ],
+      "image": "assets/posters/04-background-and-experience.png"
+    },
+    {
+      "n": 5,
+      "slug": "cognitive-architecture-deep-synthesis",
+      "title": "The Cognitive Architecture of Deep Synthesis",
+      "subtitle": "Sustaining multi-hour conceptual integration across scales and disciplines",
+      "section": "Cognition",
+      "topics": [
+        "deep focus",
+        "cognitive load",
+        "hierarchical chunking",
+        "cross-domain translation"
+      ],
+      "image": "assets/posters/05-cognitive-architecture-deep-synthesis.png"
+    },
+    {
+      "n": 6,
+      "slug": "beyond-buzzwords",
+      "title": "Beyond Buzzwords",
+      "subtitle": "Discipline, focus, and the misuse of “neurodivergence”",
+      "section": "Cognition",
+      "topics": [
+        "neurodiversity",
+        "discipline",
+        "focus",
+        "mastery",
+        "pop-psychology"
+      ],
+      "image": "assets/posters/06-beyond-buzzwords.png"
+    },
+    {
+      "n": 7,
+      "slug": "differential-diagnostics",
+      "title": "Differential Diagnostics & Behavioral Navigation",
+      "subtitle": "Sustained cognitive focus vs. neurodivergence / pathology",
+      "section": "Cognition",
+      "topics": [
+        "deep focus",
+        "off-switch",
+        "misreadings",
+        "clinical contra-indicators",
+        "compassion"
+      ],
+      "image": "assets/posters/07-differential-diagnostics.png"
+    },
+    {
+      "n": 8,
+      "slug": "somatic-anchor",
+      "title": "The Somatic Anchor",
+      "subtitle": "Yogic meditation, elite athletics, and uncompromising rigor",
+      "section": "Discipline",
+      "topics": [
+        "meditation",
+        "athletics",
+        "nervous system",
+        "somatic regimen",
+        "discipline"
+      ],
+      "image": "assets/posters/08-somatic-anchor.png"
+    },
+    {
+      "n": 9,
+      "slug": "true-preparation",
+      "title": "The True Preparation Behind Deep, High-Stakes Conceptual Synthesis",
+      "subtitle": "Physical stamina. Emotional resilience. Academic depth.",
+      "section": "Discipline",
+      "topics": [
+        "physical stamina",
+        "emotional resilience",
+        "academic depth",
+        "preparation"
+      ],
+      "image": "assets/posters/09-true-preparation.png"
+    },
+    {
+      "n": 10,
+      "slug": "training-for-failure",
+      "title": "Training for Failure and the Post-Identity Framework",
+      "subtitle": "The mechanics of detached mastery",
+      "section": "Discipline",
+      "topics": [
+        "failure",
+        "detachment",
+        "post-identity",
+        "Yoga Vashishtha",
+        "antifragility"
+      ],
+      "image": "assets/posters/10-training-for-failure.png"
+    },
+    {
+      "n": 11,
+      "slug": "systems-synthesis-curriculum",
+      "title": "The Systems Synthesis Curriculum",
+      "subtitle": "Practical exercises & course offerings",
+      "section": "Education",
+      "topics": [
+        "curriculum",
+        "exercises",
+        "school",
+        "undergraduate",
+        "professionals",
+        "first-principles"
+      ],
+      "image": "assets/posters/11-systems-synthesis-curriculum.png"
+    },
+    {
+      "n": 12,
+      "slug": "stream-guidance",
+      "title": "The Architecture of Stream Guidance",
+      "subtitle": "Avoiding the gatekeeping trap",
+      "section": "Education",
+      "topics": [
+        "four streams",
+        "gatekeeping",
+        "taxonomic alignment",
+        "cognitive profile"
+      ],
+      "image": "assets/posters/12-stream-guidance.png"
+    },
+    {
+      "n": 13,
+      "slug": "topological-bildung",
+      "title": "Architectural First-Principles Empiricism (Topological Bildung)",
+      "subtitle": "A metatheory of human development and education",
+      "section": "Education",
+      "topics": [
+        "topological bildung",
+        "free-energy reduction",
+        "streams",
+        "somatic endurance",
+        "bridge"
+      ],
+      "image": "assets/posters/13-topological-bildung.png"
+    },
+    {
+      "n": 14,
+      "slug": "universal-baseline",
+      "title": "The Universal Baseline",
+      "subtitle": "Foundational generics for all streams",
+      "section": "Education",
+      "topics": [
+        "de-siloing",
+        "first-principles interrogation",
+        "error isolation",
+        "cognitive endurance"
+      ],
+      "image": "assets/posters/14-universal-baseline.png"
+    },
+    {
+      "n": 15,
+      "slug": "contraindications-failure-modes",
+      "title": "Contraindications and Failure Modes",
+      "subtitle": "Where and when this framework fails",
+      "section": "Guardrails",
+      "topics": [
+        "early childhood",
+        "burnout",
+        "socioeconomic trap",
+        "mismatched orientation"
+      ],
+      "image": "assets/posters/15-contraindications-failure-modes.png"
+    },
+    {
+      "n": 16,
+      "slug": "sanity-check-missing",
+      "title": "Sanity Check: What Are We Still Missing?",
+      "subtitle": "Three critical vectors for a complete philosophy & operational framework",
+      "section": "Guardrails",
+      "topics": [
+        "collaboration",
+        "ethics",
+        "antifragility",
+        "multi-agent",
+        "recovery"
+      ],
+      "image": "assets/posters/16-sanity-check-missing.png"
+    },
+    {
+      "n": 17,
+      "slug": "missing-pillars",
+      "title": "The Missing Pillars: Collaboration, Ethics, and Antifragility",
+      "subtitle": "Completing the architecture of Topological Bildung",
+      "section": "Guardrails",
+      "topics": [
+        "collaborative synthesis",
+        "ethics of agency",
+        "antifragility",
+        "collapse recovery"
+      ],
+      "image": "assets/posters/17-missing-pillars.png"
+    },
+    {
+      "n": 18,
+      "slug": "lifelong-systems-architecture-pipeline",
+      "title": "The Lifelong Systems Architecture Pipeline",
+      "subtitle": "A unified journey from embodied exploration to wisdom and architectural leadership",
+      "section": "Pipeline",
+      "topics": [
+        "preschool",
+        "school",
+        "undergraduate",
+        "professional",
+        "senior",
+        "mentorship"
+      ],
+      "image": "assets/posters/18-lifelong-systems-architecture-pipeline.png"
+    },
+    {
+      "n": 19,
+      "slug": "human-development-pipeline",
+      "title": "The Human Development Pipeline",
+      "subtitle": "From preschool to mastery: building unified systems thinkers for a complex world",
+      "section": "Pipeline",
+      "topics": [
+        "development stages",
+        "curriculum alignment",
+        "parents",
+        "mentors",
+        "diplomacy"
+      ],
+      "image": "assets/posters/19-human-development-pipeline.png"
+    },
+    {
+      "n": 20,
+      "slug": "metatheory-human-capability",
+      "title": "A Metatheory of Human Capability, Education, and Personal Development",
+      "subtitle": "A complete, actionable, and rigorous blueprint for lifelong mastery",
+      "section": "Synthesis",
+      "topics": [
+        "topological bildung",
+        "pipeline",
+        "streams",
+        "universal baseline",
+        "somatic anchor"
+      ],
+      "image": "assets/posters/20-metatheory-human-capability.png"
+    },
+    {
+      "n": 21,
+      "slug": "learning-the-geometry-structure",
+      "title": "Learning the Geometry",
+      "subtitle": "A first-principles framework for learning, mastery, and systems thinking (30-chapter structure)",
+      "section": "Book",
+      "topics": [
+        "book structure",
+        "9 parts",
+        "30 chapters",
+        "appendices",
+        "companion volume"
+      ],
+      "image": "assets/posters/21-learning-the-geometry-structure.png"
+    },
+    {
+      "n": 22,
+      "slug": "learning-the-geometry-cover",
+      "title": "Learning the Geometry — Book Cover",
+      "subtitle": "A first-principles framework for learning, mastery, and systems thinking",
+      "section": "Book",
+      "topics": [
+        "book cover",
+        "ISBN 978-1-963412-00-1",
+        "first principles",
+        "systems thinking"
+      ],
+      "image": "assets/posters/22-learning-the-geometry-cover.png"
+    }
+  ]
+}

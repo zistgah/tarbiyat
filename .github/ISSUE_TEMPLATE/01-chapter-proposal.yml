@@ -1,0 +1,25 @@
+name: "📖 Chapter / section proposal"
+description: Propose a chapter, section, or expansion grounded in a Tarbiyat poster.
+title: "[chapter] "
+labels: ["chapter", "needs:ontology"]
+body:
+  - type: input
+    id: poster
+    attributes:
+      label: Related poster
+      description: Which poster does this build on? (title or slug)
+    validations: {required: true}
+  - type: textarea
+    id: thesis
+    attributes:
+      label: Thesis
+      description: What is the claim, and where does it sit in the human-development pipeline?
+    validations: {required: true}
+  - type: textarea
+    id: grounding
+    attributes:
+      label: First-principles grounding
+      description: What assumptions, physical/logical constraints, or prior work anchor this?
+    validations: {required: true}
+  - type: markdown
+    attributes: {value: "> This contribution is governed by the repository CONTRACT and CONTEXT. By opening it you agree to reconstruct faithfully, critique with evidence not tone, and maintain contract and context. Affiliation on all outputs: AyeAI."}
